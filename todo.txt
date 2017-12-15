@@ -1,0 +1,13 @@
+Admin
+- upload image
+- view image
+- view patient medical report
+- add patient medical report 
+- edit and delete user
+
+nurse
+- add and view medical report
+
+overall
+- add print function when view patient medical reports
+- css
