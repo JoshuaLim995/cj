@@ -1,9 +1,9 @@
 <?php
-$host = "localhost";
+$host = "den1.mysql4.gear.host";
 
-$db_name = "goldenagedb";
-$username = "root";
-$password = "";
+$db_name = "goldenage";
+$username = "goldenage";
+$password = "Ee4T_z16o~vK";
 
 //$db_name = "id4035166_goldenage";
 //$username = "id4035166_joshua";
