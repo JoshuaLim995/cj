@@ -12,7 +12,7 @@ $database = "goldenage";
  */
  
 //creating a new connection object using mysqli 
-$conn = new mysqli($servername, $username, $password, $database);
+$conn = new mysqli($host, $username, $password, $db_name);
  
 //if there is some error connecting to the database
 //with die we will stop the further execution by displaying a message causing the error 
