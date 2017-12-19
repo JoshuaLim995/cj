@@ -4,11 +4,10 @@ session_start();
 if(isset($_SESSION['userID']) && $_SESSION['regisType'] == "A"){
 
 	if(isset($_SESSION['userID'])){
-		include '../../CSS.php'; 
 		include ('getPatient.php'); 
 		include ('updatePatientPHP.php');  
 
-
+		include '../../CSS.php'; 
 		?>
 
 		<!DOCTYPE html>
@@ -191,14 +190,15 @@ if(isset($_SESSION['userID']) && $_SESSION['regisType'] == "A"){
 			</html> 
 
 			<?php 
-		}else{
-			header("HTTP/1.0 404 Not Found");
-			echo "<h1>404 Not Found</h1>";
-			echo "<p>The page that you have requested could not be found.</p>";
-
-			echo "<a href= '../../login.php'>";
-			echo "Please Login to open this page.";
-			echo "</a>";
-			exit();
 		}
-		?>
+	}else{
+		header("HTTP/1.0 404 Not Found");
+		echo "<h1>404 Not Found</h1>";
+		echo "<p>The page that you have requested could not be found.</p>";
+
+		echo "<a href= '../../login.php'>";
+		echo "Please Login to open this page.";
+		echo "</a>";
+		exit();
+	}
+	?>
