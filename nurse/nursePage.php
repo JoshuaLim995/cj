@@ -5,7 +5,7 @@ session_start();
 if(isset($_SESSION['userID']) && $_SESSION['regisType'] == "N"){
 
 	include ('../CSS.php');
-	include ('header.php');
+	include ('Header.php');
 
 	?>
 

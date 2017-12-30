@@ -61,9 +61,7 @@ if(isset($_SESSION['userID']) && $_SESSION['regisType'] == "A"){
 					<textarea rows="4" cols="50" name="Description">Enter text here...</textarea> 
 					<br/><br/>
 
-<label for="Photo">Photo:</label>
-<br>
-						<input id="file" name='file' type='file'/>
+
 
 					
 

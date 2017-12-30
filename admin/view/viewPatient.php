@@ -39,7 +39,7 @@ include('../../connDB.php');
 			$image_src = "../../patient_image/".$image;
 
 
-			echo "<img src='". $image_src . "' >";
+			echo "<img class='patientImage' src='". $image_src . "' >";
 
 
 			echo "<table border = 1>";

@@ -1,5 +1,6 @@
 <?php 
 session_start();
+include ('CSS.php');
 
 include('connDB.php');
 
@@ -45,9 +46,6 @@ if(isset($_POST['login'])){
 	}
 
 }
-
-include ('CSS.php');
-
 ?>
 <div class='login'>
 	<form method="post">

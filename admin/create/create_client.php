@@ -10,60 +10,72 @@ if(isset($_SESSION['userID']) && $_SESSION['regisType'] == "A"){
 			<form method="post" name="createForm" action="" enctype='multipart/form-data' onsubmit="return myFunction()">
 				<fieldset>
 					<legend><p class="big"><strong>Create Client</strong></p></legend>
-					<label for="name">Name:</label>
-					<input id="name" name="Name" type="text" value="" maxlength="255" />
-					<font color="red"><div id = "nameError"></div></font>
-					<br/><br/>
-
-
-					<label for="IC">IC:</label>
-					<input id="ic" name="IC" type="text" value="" maxlength="16" />
-					<font color="red"><div id = "icError"></div></font>
-					<br/><br/>
-
-					<label for="Contact">Contact:</label>
-					<input id="contact" name="Contact" type="text" value="" maxlength="16" />
-					<font color="red"><div id = "contactError"></div></font>
-					<br/><br/>
-
-					<label for="Age">Age:</label>
-					<input id="age" name="Age" type="text" value="" maxlength="3" />
-					<font color="red"><div id = "ageError"></div></font>
-					<br/><br/>
-
-					<label for="Address">Address:</label>
-					<input id="address" name="Address" type="text" value="" maxlength="255" />
-					<font color="red"><div id = "addressError"></div></font>
-					<br/><br/>
-
-					<!-- Gender -->
-					<input type="radio" name="Gender" value="M" checked> Male<br>
-					<input type="radio" name="Gender" value="F"> Female<br>
-
-					<br/>
-
-					<label for="Date">Date:</label>
-					<input id="date" name="regisDate" type="date" value="" maxlength="16" />
-					<font color="red"><div id = "dateError"></div></font>
-					<br/><br/>
-
-					<label>Patient:</label>
-					<select id="patient" name="patient">
-						<option value ="-1">-------</option>
-						<?php while($row = mysqli_fetch_array($resultPatient)):;?>
-							<option value="<?php echo $row[0];?>"><?php echo $row[1];?></option>
-						<?php endwhile;?>
-					</select>
-					<font color="red"><div id="patientError"></div></font>
-					<br>
-
-
-
-					<label for="Relationship">Relationship:</label>
-					<input id="relationship" name="Relationship" type="text" value="" maxlength="16" />
-					<font color="red"><div id = "relationshipError"></div></font>
-					<br/><br/>
-					
+					<table>
+						<tr>
+							<td><label for="name">Name:</label></td>
+							<td><input id="name" name="Name" type="text" value="" maxlength="255" /></td>
+							<td><label for="IC">IC:</label></td>
+							<td><input id="ic" name="IC" type="text" value="" maxlength="16" /></td>
+						</tr>
+						<tr>
+							<td colspan="2"><font color="red"><div id = "nameError"></div></font></td>
+							<td colspan="2"><font color="red"><div id = "icError"></div></font></td>
+						</tr>
+						<tr>
+							<td><label for="Contact">Contact:</label></td>
+							<td><input id="contact" name="Contact" type="text" value="" maxlength="16" /></td>
+							<td><label for="Age">Age:</label></td>
+							<td><input id="age" name="Age" type="text" value="" maxlength="3" /></td>
+						</tr>
+						<tr>
+							<td colspan="2"><font color="red"><div id = "contactError"></div></font></td>
+							<td colspan="2"><font color="red"><div id = "ageError"></div></font></td>
+						</tr>
+						<tr>
+							<td><label for="Address">Address:</label></td>
+							<td><input id="address" name="Address" type="text" value="" maxlength="255" /></td>
+						</tr>
+						<tr>
+							<td colspan="2"><font color="red"><div id = "addressError"></div></font></td>
+						</tr>
+						<tr>
+							<td><label for="Gender">Gender:</label></td>
+							<td>
+								<input type="radio" name="Gender" value="M" checked> Male
+								<input type="radio" name="Gender" value="F"> Female
+							</td>
+						</tr>
+						<tr>
+							<td><label for="Date">Date:</label></td>
+							<td><input id="date" name="regisDate" type="date" value="" maxlength="16" /></td>
+						</tr>
+						<tr>
+							<td colspan="2"><font color="red"><div id = "dateError"></div></font></td>
+						</tr>
+						<tr>
+							<td><label>Patient:</label></td>
+							<td>
+								<select id="patient" name="patient">
+									<option value ="-1">-------</option>
+									<?php while($row = mysqli_fetch_array($resultPatient)):;?>
+									<option value="<?php echo $row[0];?>"><?php echo $row[1];?></option>
+									<?php endwhile;?>
+								</select>
+							</td>
+						</tr>
+						<tr>
+							<td colspan="2"><font color="red"><div id="patientError"></div></font></td>
+						</tr>
+						<tr>
+							<td><label for="Relationship">Relationship:</label></td>
+							<td><input id="relationship" name="Relationship" type="text" value="" maxlength="16" /></td>
+							<td class="inLine"><font color="red"><div id = "relationshipError"></div></font></td>
+						</tr>
+						<tr>
+							<td><label for="Photo">Photo:</label></td>
+							<td><input id="file" name="file" type="file"/></td>
+						</tr>
+					</table>
 				</fieldset>
 
 				<br>

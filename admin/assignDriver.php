@@ -14,53 +14,66 @@ if(isset($_SESSION['userID']) && $_SESSION['regisType'] == "A"){
 
 		<div class='create'>
 			<form method="post" name="assignDriver" action="" enctype='multipart/form-data' onsubmit="return myFunction()">
-				<fieldset>
+				<fieldset class="fitMid">
 					<legend><strong><p class="big">Assign Driver</p></strong></legend>
-					<label>Patient Name:</label>
-					<label>Patient:</label>
-					<select id="patient" name="Patient_ID">
-						<option value ="-1">-------</option>
-						<?php while($row = mysqli_fetch_array($resultPatient)):;?>
-							<option value="<?php echo $row[0];?>"><?php echo $row[1];?></option>
-						<?php endwhile;?>
-					</select>
-					<font color="red"><div id="patientError"></div></font>
-					<br>
-					<label>Nurse Name:</label>
-					<select id="nurse" name="Nurse_ID">
-						<option value ="-1">-------</option>
-						<?php while($row = mysqli_fetch_array($resultNurse)):;?>
-							<option value="<?php echo $row[0];?>"><?php echo $row[1];?></option>
-						<?php endwhile;?>
-					</select>
-					<font color="red"><div id="nurseError"></div></font>
-					<br>
-					<label>Driver Name:</label>
-					<select id="driver" name="Driver_ID">
-						<option value ="-1">-------</option>
-						<?php while($row = mysqli_fetch_array($resultDriver)):;?>
-							<option value="<?php echo $row[0];?>"><?php echo $row[1];?></option>
-						<?php endwhile;?>
-					</select>
-					<font color="red"><div id="driverError"></div></font>
-					<br>
-					<label>Date:</label>
-					<input id="date" type="date" name= "Date" size="16" >
-					<font color="red"><div id="dateError"></div></font>
-					<br>
-					<label>Date:</label>
-					<input id="time" type="time" name= "Time" size="16" >
-					<font color="red"><div id="timeError"></div></font>
-
-
-					<br><br>
-					<label>Location:</label>
-					<input id="location" type="text" name= "Location" size="16" >
-					<font color="red"><div id="locationError"></div></font>
-					<br>
-					<label>Description:</label>
-					<br>
-					<textarea rows="4" cols="50" name="Description">Enter text here...</textarea> 
+					<table>
+						<tr>
+							<td class="inLine"><label>Patient Name:</label></td>
+							<td >
+								<select id="patient" name="Patient_ID">
+									<option value ="-1">-------</option>
+									<?php while($row = mysqli_fetch_array($resultPatient)):;?>
+										<option value="<?php echo $row[0];?>"><?php echo $row[1];?></option>
+									<?php endwhile;?>
+								</select>
+							</td>
+							<td class="inLine"><label>Nurse Name:</label></td>
+							<td >
+								<select id="nurse" name="Nurse_ID">
+									<option value ="-1">-------</option>
+									<?php while($row = mysqli_fetch_array($resultNurse)):;?>
+										<option value="<?php echo $row[0];?>"><?php echo $row[1];?></option>
+									<?php endwhile;?>
+								</select>
+							</td>
+						</tr>
+						<tr>
+							<td colspan="2"><font color="red"><div id="patientError"></div></font></td>
+							<td colspan="2"><font color="red"><div id="nurseError"></div></font></td>
+						</tr>
+						<tr>
+							<td class="inLine"><label>Driver Name:</label></td>
+							<td><select id="driver" name="Driver_ID">
+									<option value ="-1">-------</option>
+									<?php while($row = mysqli_fetch_array($resultDriver)):;?>
+										<option value="<?php echo $row[0];?>"><?php echo $row[1];?></option>
+									<?php endwhile;?>
+								</select>
+							</td>
+							<td><font color="red"><div id="driverError"></div></font></td>
+						</tr>
+						<tr>
+							<td class="inLine"><label>Time:</label></td>
+							<td><input id="time" type="time" name= "Time" size="16" ></td>
+							<td class="inLine"><label>Date:</label></td>
+							<td><input id="date" type="date" name= "Date" size="16" ></td>
+						</tr>
+						<tr>
+							<td colspan="2"><font color="red"><div id="timeError"></div></font></td>
+							<td colspan="2"><font color="red"><div id="dateError"></div></font></td>
+						</tr>
+						<tr>
+							<td><label>Location:</label></td>
+							<td><input id="location" type="text" name= "Location" size="16" ></td>
+						</tr>
+						<tr>
+							<td colspan="2"><font color="red"><div id="locationError"></div></font></td>
+						</tr>
+						<tr>
+							<td><label>Description:</label></td>
+							<td><textarea rows="4" cols="50" name="Description" placeholder="Enter text here..."></textarea> </td>
+						</tr>
+					</table>
 				</fieldset>
 				<center><input type="submit" value="Assign" name="assign" onclick="return myFunction()"> </center>	
 			</form>

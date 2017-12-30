@@ -1,7 +1,6 @@
 <?php 
 session_start();
 if(isset($_SESSION['userID']) && $_SESSION['regisType'] == "A"){
-	
 	include ('../CSS.php');
 	include ('adminHeader.php');
 	include('../connDB.php');

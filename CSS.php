@@ -28,11 +28,13 @@ div.login {
 }
  
 div.create {
+	position:center;
 	text-align: center;
 	margin-left: 500px;
 	margin-right: 500px;
 	margin-top: auto;
 	margin-bottom: auto;
+	
 	border: #ff0000 3px;
 }
 div.logout {
@@ -138,5 +140,14 @@ button.login{
 table.showData{
 	margin-top: 25px;
 	width: 80%;
+}
+
+
+td.inLine{
+	white-space: nowrap;	
+}
+
+img.patientImage {
+	width: 25%;
 }
 </style>

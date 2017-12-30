@@ -1,7 +1,5 @@
 <?php 
-
-if(isset($_SESSION['userID']) && $_SESSION['regisType'] == "N"){
-
+if(isset($_SESSION['userID']) && $_SESSION['regisType'] == "A"){
 	include 'regisClientPHP.php'; 
 	?>
 	<!DOCTYPE html>
@@ -38,9 +36,9 @@ if(isset($_SESSION['userID']) && $_SESSION['regisType'] == "N"){
 					<font color="red"><div id = "addressError"></div></font>
 					<br/><br/>
 
+					<!-- Gender -->
 					<input type="radio" name="Gender" value="M" checked> Male<br>
 					<input type="radio" name="Gender" value="F"> Female<br>
-
 
 					<br/>
 
@@ -59,11 +57,12 @@ if(isset($_SESSION['userID']) && $_SESSION['regisType'] == "N"){
 					<font color="red"><div id="patientError"></div></font>
 					<br>
 
+
+
 					<label for="Relationship">Relationship:</label>
 					<input id="relationship" name="Relationship" type="text" value="" maxlength="16" />
 					<font color="red"><div id = "relationshipError"></div></font>
 					<br/><br/>
-
 					
 				</fieldset>
 
@@ -88,12 +87,14 @@ if(isset($_SESSION['userID']) && $_SESSION['regisType'] == "N"){
 
 				if (createForm.ic.value ==""){
 					document.getElementById("icError").innerHTML = "IC must be fill";
+
 					i++;
 				}else
 				document.getElementById("icError").innerHTML = null;
 
 				if (createForm.contact.value ==""){
 					document.getElementById("contactError").innerHTML = "Contact must be fill";
+
 					i++;
 				}else
 				document.getElementById("contactError").innerHTML = null;
@@ -142,10 +143,16 @@ if(isset($_SESSION['userID']) && $_SESSION['regisType'] == "N"){
 			}
 		</script>
 
+
+
+
+
+
+
 	</body>
 	</html> 
-	
-	<?php 
+
+	<?php
 }else{
 	header("HTTP/1.0 404 Not Found");
 	echo "<h1>404 Not Found</h1>";
