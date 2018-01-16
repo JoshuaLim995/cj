@@ -26,9 +26,6 @@ if(isset($_SESSION['userID']) && $_SESSION['regisType'] == "N"){
 
 		$Deposit = $_POST['Deposit'];
 
-		$Meals = null;
-		$Sickness = null;
-
 
 		if(isset($_POST['diseases'])){
 			$Sickness = implode(",",$_POST['diseases']);

@@ -30,8 +30,6 @@ div.login {
 div.create {
 	position:center;
 	text-align: center;
-	margin-left: 500px;
-	margin-right: 500px;
 	margin-top: auto;
 	margin-bottom: auto;
 	
@@ -137,6 +135,10 @@ button.login{
 	margin-left: 250px;
 }
 
+table{
+	border-collapse: collapse;
+}
+
 table.showData{
 	margin-top: 25px;
 	width: 80%;
@@ -150,4 +152,8 @@ td.inLine{
 img.patientImage {
 	width: 25%;
 }
+
+fieldset.fieldset-auto-width {
+         display: inline-block;
+    }
 </style>

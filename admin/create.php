@@ -2,16 +2,16 @@
 session_start();
 if(isset($_SESSION['userID']) && $_SESSION['regisType'] == "A"){
 
-include ('../CSS.php');
- include ('adminHeader.php');
+    include ('../CSS.php');
+    include ('adminHeader.php');
 
- if(isset($_GET["regisType"])){
-       $regisType = $_GET["regisType"]; 
-   }
-   ?>
+    if(isset($_GET["regisType"])){
+     $regisType = $_GET["regisType"]; 
+ }
+ ?>
 
-<html>
-<head>
+ <html>
+ <head>
     <title id = "title">Create</title>
 </head>
 <body>
@@ -32,16 +32,16 @@ include ('../CSS.php');
     </div>
     <?php
     if(isset($_GET["regisType"])){
-       $regisType = $_GET["regisType"];
+     $regisType = $_GET["regisType"];
 
-       switch ($regisType) {
+     switch ($regisType) {
 
-case 'A':
-case 'D':
-case 'N':
-case 'Z':
-include('create/create_user.php');
-    break;
+        case 'A':
+        case 'D':
+        case 'N':
+        case 'Z':
+        include('create/create_user.php');
+        break;
 
 
 
@@ -65,7 +65,7 @@ include('create/create_user.php');
 </body>
 </html>
 
-    <?php
+<?php
 }else{
     header("HTTP/1.0 404 Not Found");
     echo "<h1>404 Not Found</h1>";

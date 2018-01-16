@@ -4,8 +4,6 @@ if(isset($_SESSION['userID']) && $_SESSION['regisType'] == "A"){
 	include ('../CSS.php');
 	include ('adminHeader.php');
 	include('../connDB.php');
-
-
 	?>
 
 	<!DOCTYPE html>

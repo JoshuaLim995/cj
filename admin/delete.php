@@ -21,29 +21,37 @@ if(isset($_SESSION['userID']) && $_SESSION['regisType'] == "A"){
         case 'C':
         $query = "DELETE FROM clients WHERE ID = $ID";
         break;
+        case 'schedule':
+        $query = "DELETE FROM driver_schedule WHERE ID = $ID";
+        break;
         default:
-
         break;
     }
 
     if(isset($query)){
         $result = mysqli_query($con,$query);
 
-        $return = 'Location: view.php?type=' . $type;
-        if ($result) {
-            header($return);
-        }else{
-            echo 'failed to delete';
-        }   
 
+        if($type == 'schedule')
+            $return = 'Location: viewSchedule.php';
+        else
+           $return = 'Location: view.php?type=' . $type;
+
+
+
+
+
+       if ($result) {
+        header($return);
     }else{
-        echo "Query is NULL";
+        echo 'failed to delete';
+    }   
 
-        exit();
-    }
+}else{
+    echo "Query is NULL";
 
-
-
+    exit();
+}
 
 }
 else{

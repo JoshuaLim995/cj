@@ -38,16 +38,15 @@ if(isset($_SESSION['userID']) && $_SESSION['regisType'] == "A"){
      switch ($type) {
 
         case 'U':
-        include 'getAllData/getAllUsers.php';
+        include '../include/getAllData/getAllUsers.php';
         break;
 
         case 'P':
-        include 'getAllData/getAllPatients.php';
-        
+        include '../include/getAllData/getAllPatients.php';        
         break;
-        case 'C':
-        include 'getAllData/getAllClients.php';
 
+        case 'C':
+        include '../include/getAllData/getAllClients.php';
         break;
 
         default:

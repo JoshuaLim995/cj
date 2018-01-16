@@ -16,8 +16,12 @@ if(isset($_SESSION['userID']) && $_SESSION['regisType'] == "N"){
 		<span><a href='view.php'><strong>View</strong></a></span>
 		<span><strong>|</strong></span>
 		<span><a href='assignDriver.php'><strong>Assign Driver</strong></a></span>
+<!--
 		<span><strong>|</strong></span>
 		<span><a href='searchPatient.php'><strong>Search</strong></a></span>
+-->
+		<span><strong>|</strong></span>
+		<span><a href='viewSchedule.php'><strong>View Schedule</strong></a></span>
 	</div>
 
 
