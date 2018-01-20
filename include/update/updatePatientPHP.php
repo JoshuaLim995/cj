@@ -21,14 +21,27 @@ if(isset($_SESSION['userID']) && $_SESSION['regisType'] == "A"){
 		$Allergic = $_POST['Allergic'];
 
 		$Deposit = $_POST['Deposit'];
-$Additional = $_POST['Additional'];
-
+		$Additional = $_POST['Additional'];
 
 		if(isset($_POST['diseases'])){
 			$Sickness = implode(",",$_POST['diseases']);
+
+			if(isset($_POST['Other_Disease'])){
+				$Sickness = $Sickness . ',' .  $_POST['Other_Disease'];
+			}
 		}
+		else{
+			$Sickness = $_POST['Other_Disease'];
+		}
+
 		if(isset($_POST['food'])){
 			$Meals = implode(",",$_POST['food']);
+			if(isset($_POST['Other_Food'])){
+				$Meals = $Meals . ',' .  $_POST['Other_Food'];
+			}
+		}
+		else {
+			$Meals = $_POST['Other_Food'];
 		}
 
 		$target_dir = "../../patient_image/";

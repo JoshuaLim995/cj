@@ -19,8 +19,6 @@ include ('updatePatientPHP.php');
 			<fieldset class="fieldset-auto-width">
 				<legend><p class="big"><strong>Update Patient</strong></p></legend>
 
-
-
 				<table>
 					<tr>
 						<td><label for="name">Name:</label></td>
@@ -84,126 +82,182 @@ include ('updatePatientPHP.php');
 						<td class="inLine"><font color="red"><div id = "bloodTypeError"></div></font></td>
 					</tr>
 					<tr>
-						<td><label for="Diseases">Diseases:</label></td>
+						<td><label for="Diseases">Sickness:</label></td>
 						<td colspan="3" class="inLine">
-							<input type="checkbox" name="diseases[]" value="Diabetes">Diabetes
-							<input type="checkbox" name="diseases[]" value="Heart Diseases">Heart Diseases
-							<input type="checkbox" name="diseases[]" value="Dementia">Dementia
-							<input type="checkbox" name="diseases[]" value="Lung disease">Lung disease
+							<input type="checkbox" name="diseases[]" value="Diabetes" <?php if(in_array('Diabetes', $s_array)){
+								echo "checked";
+							} ?>>Diabetes
+							<input type="checkbox" name="diseases[]" value="Heart Diseases" <?php if(in_array('Heart Diseases', $s_array)){
+								echo "checked";
+							} ?>>Heart Diseases
+							<input type="checkbox" name="diseases[]" value="Dementia" <?php if(in_array('Dementia', $s_array)){
+								echo "checked";
+							} ?>>Dementia
+							<input type="checkbox" name="diseases[]" value="Lung disease" <?php if(in_array('Lung disease', $s_array)){
+								echo "checked";
+							} ?>>Lung disease
 						</td>
 					</tr>
 					<tr>
-						<td><label class="inLine" for="Food">Food Sensitive:</label></td>
-						<td colspan="3" class="inLine">
-							<input type="checkbox" name="food[]" value="Vegetarian">Vegetarian
-							<input type="checkbox" name="food[]" value="Full Vegetarian">Full Vegetarian
-							<input type="checkbox" name="food[]" value="No Pork">No Pork
-							<input type="checkbox" name="food[]" value="No Cow">No Cow
-							<input type="checkbox" name="food[]" value="No Seafood">No Seafood
-							<input type="checkbox" name="food[]" value="Normal">Normal
-						</td>
-					</tr>
-					<tr>
-						<td><label for="Date">Date:</label></td>
-						<td colspan="3"><input id="date" name="regisDate" type="date" value="<?php echo $regisDate; ?>" maxlength="16" /></td>
-					</tr>
-					<tr>
-						<td><font color="red"><div id = "dateError"></div></font></td>
-					</tr>
-					<tr>
-						<td><label for="Photo">Photo:</label></td>
-						<td><input id="file" name='file' type='file'/></td>
-					</tr>
-					<tr>
-						<td><label for="Addition">Additional Information:</label></td>
-						<td><textarea rows="4" cols="50" name="Additional"><?php echo $Additional_Info; ?></textarea></td>
-					</tr>
-				</table>	
+						<td>Other Sickness:</td>
+						<td colspan="3" class="inLine"><textarea rows="2" cols="50" name="Other_Disease" placeholder="Other Sickness..."><?php foreach ($s_array as $sick) {
+								switch ($sick) {
+									case 'Diabetes':
+									case 'Heart Diseases':
+									case 'Dementia':
+									case 'Lung disease':
+        							# code...
+									break;
+
+									default:
+									echo $sick;
+									break;
+								}
+							} ?></textarea></td>
+						</tr>
+						<tr>
+							<td><label class="inLine" for="Food">Food Sensitive:</label></td>
+							<td colspan="3" class="inLine">
+								<input type="checkbox" name="food[]" value="Vegetarian" <?php if(in_array('Vegetarian', $m_array)){
+								echo "checked";
+							} ?> >Vegetarian
+								<input type="checkbox" name="food[]" value="Full Vegetarian" <?php if(in_array('Full Vegetarian', $m_array)){
+								echo "checked";
+							} ?> >Full Vegetarian
+								<input type="checkbox" name="food[]" value="No Pork" <?php if(in_array('No Pork', $m_array)){
+								echo "checked";
+							} ?> >No Pork
+								<input type="checkbox" name="food[]" value="No Cow" <?php if(in_array('No Cow', $m_array)){
+								echo "checked";
+							} ?> >No Cow
+								<input type="checkbox" name="food[]" value="No Seafood" <?php if(in_array('No Seafood', $m_array)){
+								echo "checked";
+							} ?> >No Seafood
+								<input type="checkbox" name="food[]" value="Normal" <?php if(in_array('Normal', $m_array)){
+								echo "checked";
+							} ?> >Normal
+							</td>
+						</tr>
+						<tr>
+							<td>Other:</td>
+							<td colspan="3" class="inLine"><textarea rows="2" cols="50" name="Other_Food" placeholder="Other Meals..."><?php foreach ($m_array as $food) {
+								switch ($food) {
+									case 'Vegetarian':
+									case 'Full Vegetarian':
+									case 'No Pork':
+									case 'No Cow':
+									case 'No Seafood':
+									case 'Normal':
+        							# code...
+									break;
+
+									default:
+									echo $food;
+									break;
+								}
+							} ?></textarea></td>
+						</tr>
+						<tr>
+							<td><label for="Date">Date:</label></td>
+							<td colspan="3"><input id="date" name="regisDate" type="date" value="<?php echo $regisDate; ?>" maxlength="16" /></td>
+						</tr>
+						<tr>
+							<td><font color="red"><div id = "dateError"></div></font></td>
+						</tr>
+						<tr>
+							<td><label for="Photo">Photo:</label></td>
+							<td><input id="file" name='file' type='file'/></td>
+						</tr>
+						<tr>
+							<td><label for="Addition">Additional Information:</label></td>
+							<td><textarea rows="4" cols="50" name="Additional"><?php echo $Additional_Info; ?></textarea></td>
+						</tr>
+					</table>	
 
 
 
-			</fieldset>
+				</fieldset>
 
-			<br>
+				<br>
 
-			<input type="submit" value="Update" name="update" onclick="return myFunction()"> 
+				<input type="submit" value="Update" name="update" onclick="return myFunction()"> 
 
-		</div>
-		<script>
-			function myFunction() {
-				var i = 0;
-				if (createForm.name.value =="")
-				{
-					document.getElementById("nameError").innerHTML = "Name cannot be empty";
-					i++;
-				}
-				else
-					document.getElementById("nameError").innerHTML = null;
-
-
-				if (!createForm.deposit.value ==""){
-
-					if (isNaN(createForm.deposit.value)){
-						document.getElementById("depositError").innerHTML = "Not a number";
-
-						i++;
-					}else
-					document.getElementById("depositError").innerHTML = null;
-				}else{
-					document.getElementById("depositError").innerHTML = "deposit cannot be empty";
-					i++;
-				}
-
-
-				if (createForm.ic.value =="")
-				{
-					document.getElementById("icError").innerHTML = "IC must be fill";
-					i++;
-				}
-				else
-					document.getElementById("icError").innerHTML = null;
-
-				if (createForm.contact.value =="")
-				{
-					document.getElementById("contactError").innerHTML = "Contact must be fill";
-					i++;
-				}
-				else
-					document.getElementById("contactError").innerHTML = null;
-
-				if (!createForm.age.value ==""){
-					if (isNaN(createForm.age.value)){
-						document.getElementById("ageError").innerHTML = "Not a number";
+			</div>
+			<script>
+				function myFunction() {
+					var i = 0;
+					if (createForm.name.value =="")
+					{
+						document.getElementById("nameError").innerHTML = "Name cannot be empty";
 						i++;
 					}
-					else{
-						document.getElementById("ageError").innerHTML = null;
+					else
+						document.getElementById("nameError").innerHTML = null;
+
+
+					if (!createForm.deposit.value ==""){
+
+						if (isNaN(createForm.deposit.value)){
+							document.getElementById("depositError").innerHTML = "Not a number";
+
+							i++;
+						}else
+						document.getElementById("depositError").innerHTML = null;
+					}else{
+						document.getElementById("depositError").innerHTML = "deposit cannot be empty";
+						i++;
 					}
-				}else{
-					document.getElementById("ageError").innerHTML = "Age must be fill";
-					i++;
+
+
+					if (createForm.ic.value =="")
+					{
+						document.getElementById("icError").innerHTML = "IC must be fill";
+						i++;
+					}
+					else
+						document.getElementById("icError").innerHTML = null;
+
+					if (createForm.contact.value =="")
+					{
+						document.getElementById("contactError").innerHTML = "Contact must be fill";
+						i++;
+					}
+					else
+						document.getElementById("contactError").innerHTML = null;
+
+					if (!createForm.age.value ==""){
+						if (isNaN(createForm.age.value)){
+							document.getElementById("ageError").innerHTML = "Not a number";
+							i++;
+						}
+						else{
+							document.getElementById("ageError").innerHTML = null;
+						}
+					}else{
+						document.getElementById("ageError").innerHTML = "Age must be fill";
+						i++;
+					}
+
+					if(createForm.address.value == ""){
+						document.getElementById("addressError").innerHTML = "Address must be filled";
+
+						i++;
+					}else{
+						document.getElementById("addressError").innerHTML = null;
+					}
+
+					if(createForm.bloodType.value == "-1"){
+						document.getElementById("bloodTypeError").innerHTML = "Please select a blood type";
+
+						i++;
+					}else{
+						document.getElementById("bloodTypeError").innerHTML = null;
+					}
+
+					return (i == 0);
 				}
+			</script>
 
-				if(createForm.address.value == ""){
-					document.getElementById("addressError").innerHTML = "Address must be filled";
-
-					i++;
-				}else{
-					document.getElementById("addressError").innerHTML = null;
-				}
-
-				if(createForm.bloodType.value == "-1"){
-					document.getElementById("bloodTypeError").innerHTML = "Please select a blood type";
-
-					i++;
-				}else{
-					document.getElementById("bloodTypeError").innerHTML = null;
-				}
-
-				return (i == 0);
-			}
-		</script>
-
-	</body>
-	</html> 
+		</body>
+		</html> 
 

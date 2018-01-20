@@ -72,7 +72,7 @@ if(isset($_SESSION['userID'])){
 						<td class="inLine"><font color="red"><div id = "bloodTypeError"></div></font></td>
 					</tr>
 					<tr>
-						<td><label for="Diseases">Diseases:</label></td>
+						<td><label for="text.blade,text.html.blade,text.html.laravel-blade,source.php">Sickness:</label></td>
 						<td colspan="3" class="inLine">
 							<input type="checkbox" name="diseases[]" value="Diabetes">Diabetes
 							<input type="checkbox" name="diseases[]" value="Heart Diseases">Heart Diseases
@@ -81,7 +81,11 @@ if(isset($_SESSION['userID'])){
 						</td>
 					</tr>
 					<tr>
-						<td><label class="inLine" for="Food">Food Sensitive:</label></td>
+						<td>Other Sickness:</td>
+						<td colspan="3" class="inLine"><textarea rows="2" cols="50" name="Other_Disease" placeholder="Other Sickness..."></textarea></td>
+					</tr>
+					<tr>
+						<td><label class="inLine" for="Food">Meal:</label></td>
 						<td colspan="3" class="inLine">
 							<input type="checkbox" name="food[]" value="Vegetarian">Vegetarian
 							<input type="checkbox" name="food[]" value="Full Vegetarian">Full Vegetarian
@@ -90,6 +94,10 @@ if(isset($_SESSION['userID'])){
 							<input type="checkbox" name="food[]" value="No Seafood">No Seafood
 							<input type="checkbox" name="food[]" value="Normal">Normal
 						</td>
+					</tr>
+					<tr>
+						<td>Other:</td>
+						<td colspan="3" class="inLine"><textarea rows="2" cols="50" name="Other_Food" placeholder="Other Meals..."></textarea></td>
 					</tr>
 					<tr>
 						<td><label for="Date">Date:</label></td>

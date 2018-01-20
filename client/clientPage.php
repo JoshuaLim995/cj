@@ -6,9 +6,10 @@ if(isset($_SESSION['userID']) && $_SESSION['regisType'] == "C"){
 
 
 	include ('../CSS.php');
+		include('../connDB.php');
 	include ('clientHeader.php'); 
 
-	$Patient_ID = $_SESSION['Patient_ID'];
+	$ID = $_SESSION['Patient_ID'];
 	?>	
 	<!DOCTYPE html>
 	<html>
@@ -16,7 +17,9 @@ if(isset($_SESSION['userID']) && $_SESSION['regisType'] == "C"){
 
 	<body>
 
-		<?php include 'viewPatient.php'; ?>
+		<?php include 'viewPatient.php'; ?> 
+		
+
 	</body>
 
 	</html>

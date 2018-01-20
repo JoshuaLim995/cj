@@ -139,6 +139,14 @@ table{
 	border-collapse: collapse;
 }
 
+table.medical{
+	width: 500px;
+}
+
+table.viewPatient{
+	width: 500px;
+}
+
 table.showData{
 	margin-top: 25px;
 	width: 80%;
