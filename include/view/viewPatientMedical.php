@@ -4,15 +4,15 @@
 </head>
 <body>
 
-
-	
-	<a href="javascript:history.go(-1)"><img src='../../button/back.png' width="50" height="50"></a> 
-
-
 	<?php
 	session_start();
 	if(isset($_GET["ID"])){
 		$pID = $_GET["ID"];
+		
+		echo "<a href='viewPatient.php?ID=" . $pID . "'><img src='../../button/back.png' width='50' height='50'></a> ";
+
+
+
 
 		$_SESSION['pID'] = $pID;
 
