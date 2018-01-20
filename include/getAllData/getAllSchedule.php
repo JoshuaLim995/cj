@@ -40,7 +40,8 @@ if(isset($_SESSION['userID'])){
 
 
 			echo "<td>";
-			echo "<a href= 'delete.php?ID={$row['ds_ID']}&type=schedule' onclick='return myFunction({$row['ds_ID']})'>Delete</a>";				echo "</td>";	
+			echo "<a href= 'delete.php?ID={$row['ds_ID']}&type=schedule' onclick='return myFunction({$row['ds_ID']})'>Delete</a>";
+			echo "</td>";	
 			echo "</tr>";
 		}
 		echo "</table>";
@@ -56,7 +57,7 @@ if(isset($_SESSION['userID'])){
 	<script>
 		function myFunction() {
 			var id = arguments[0];
-			var r = confirm("Delete User? ID: " + id);
+			var r = confirm("Delete Schedule?");
 			if (r == true) {
 				return true;
 			} else {

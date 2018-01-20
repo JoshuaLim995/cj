@@ -10,12 +10,13 @@
 
 
 	<?php
+	session_start();
 	if(isset($_GET["ID"])){
 		$pID = $_GET["ID"];
 
+		$_SESSION['pID'] = $pID;
+
 		$query = "SELECT ID, Date FROM medical WHERE Patient_ID = $pID ORDER BY Date DESC";
-
-
 
 
 		echo "<center>";
@@ -26,7 +27,7 @@
 
 			echo "
 			<button>
-			<a href= '../print.php?Patient={$pID}'>Print All</a>
+				<a href= '../print.php?Patient={$pID}'>Print All</a>
 			</button>";
 
 
@@ -39,6 +40,16 @@
 				echo "<td>";
 				echo "<a href= 'viewMedicalDetail.php?ID={$row['ID']}'>View Detail</a>";
 				echo "</td>";
+				
+				if($_SESSION['regisType'] == "A"){
+					echo "<td>";
+					echo "<a href= '../update/updatePatientMedical.php?ID={$row['ID']}'>Update</a>";
+					echo "</td>";
+					echo "<td>";
+					echo "<a href= '../delete.php?ID={$row['ID']}&type=medical' onclick='return myFunction({$row['ID']})'>Delete</a>";
+					echo "</td>";
+				}
+
 				echo "</tr>";
 
 				echo "</table>";
@@ -55,5 +66,18 @@
 
 	echo "</center>";
 	?>
+
+	<script>
+		function myFunction() {
+			var id = arguments[0];
+			var r = confirm("Delete Medical Record?");
+			if (r == true) {
+				return true;
+			} else {
+				return false;
+			}
+		}
+	</script>
+
 </body>
 </html>

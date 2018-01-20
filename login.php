@@ -37,9 +37,9 @@ if(isset($_POST['login'])){
 		header('Location: chef/chefPage.php');
 		break;
 		case 'C':
-			header('Location: client/clientPage.php');
-			$_SESSION['Patient_ID'] = $row['Patient_ID'];
-			break;
+		header('Location: client/clientPage.php');
+		$_SESSION['Patient_ID'] = $row['Patient_ID'];
+		break;
 		default:
 		echo "Wrong username or password! Please try again.";
 		break;
@@ -47,9 +47,11 @@ if(isset($_POST['login'])){
 
 }
 ?>
-<div class='login'>
+<div class='login' align="center">
+
+<img class='login' src='image\logo.jpg'>
 	<form method="post">
-		<fieldset>
+		<fieldset class="fieldset-auto-width">
 			<legend><strong>LOGIN</strong></legend>
 			<label for="loginID">Login ID:</label>
 			<input id="loginID" name="loginID" type="text" value="" maxlength="255" />

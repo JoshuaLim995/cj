@@ -5,6 +5,7 @@
 	</button>
 </div>
 <div class="adminHeader">
+	<span><img class='header' src='..\image\logo.jpg' align="left"></span>
 	<span><a href='clientPage.php'><strong>Home</strong></a></span>
 	<span><a href='viewPatientMedical.php'><strong>View Patient Medical</strong></a></span>
 </div>

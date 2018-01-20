@@ -1,5 +1,6 @@
 <?php 
 session_start();
+
 if(isset($_SESSION['userID']) && $_SESSION['regisType'] == "A"){
     include('../connDB.php');
 
@@ -8,10 +9,10 @@ if(isset($_SESSION['userID']) && $_SESSION['regisType'] == "A"){
 
     if(isset($_REQUEST["ID"]) && isset($_REQUEST['type'])){
 
-     $ID = $_REQUEST["ID"];
-     $type = $_REQUEST["type"];
+       $ID = $_REQUEST["ID"];
+       $type = $_REQUEST["type"];
 
-     switch ($type) {
+       switch ($type) {
         case 'U':
         $query = "DELETE FROM users WHERE ID = $ID";
         break;
@@ -24,6 +25,9 @@ if(isset($_SESSION['userID']) && $_SESSION['regisType'] == "A"){
         case 'schedule':
         $query = "DELETE FROM driver_schedule WHERE ID = $ID";
         break;
+        case 'medical':
+        $query = "DELETE FROM medical WHERE ID = $ID";
+        break;
         default:
         break;
     }
@@ -34,16 +38,22 @@ if(isset($_SESSION['userID']) && $_SESSION['regisType'] == "A"){
 
         if($type == 'schedule')
             $return = 'Location: viewSchedule.php';
+
+                if($type == 'medical'){
+                    $return = 'Location: view/viewPatientMedical.php?ID=' . $_SESSION['pID'];
+                }
+            
+
         else
-           $return = 'Location: view.php?type=' . $type;
+         $return = 'Location: view.php?type=' . $type;
 
 
 
 
 
-       if ($result) {
-        header($return);
-    }else{
+     if ($result) {
+         header($return);
+     }else{
         echo 'failed to delete';
     }   
 

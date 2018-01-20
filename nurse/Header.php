@@ -9,6 +9,7 @@ if(isset($_SESSION['userID']) && $_SESSION['regisType'] == "N"){
 		</button>
 	</div>
 	<div class="adminHeader">
+		<span><img class='header' src='..\image\logo.jpg' align="left"></span>
 		<span><a href='nursePage.php'><strong>Home</strong></a></span>
 		<span><strong>|</strong></span>
 		<span><a href='create.php'><strong>Create</strong></a></span>

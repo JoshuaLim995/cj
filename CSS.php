@@ -1,63 +1,61 @@
 <style>
-div.header {
-	width:100%;
-	height:80px;
-	text-align:right;
-	position:relative;
-	line-height:100px;
-	background-color:#E5E4E2;
-	font-size: 25px;
-}
+	div.header {
+		width:100%;
+		height:80px;
+		text-align:right;
+		position:relative;
+		line-height:100px;
+		background-color:#E5E4E2;
+		font-size: 25px;
+	}
 
-div.adminHeader {
-	width:100%;
-	height:80px;
-	text-align:right;
-	position:relative;
-	line-height:100px;
-	background-color:#E5E4E2;
-	font-size: 25px;
-}
+	div.adminHeader {
+		width:100%;
+		height:80px;
+		text-align:right;
+		position:relative;
+		line-height:100px;
+		background-color:#E5E4E2;
+		font-size: 25px;
+	}
 
-div.login {
-	margin-left: 500px;
-	margin-right: 500px;
-	margin-top: 250px;
-	margin-bottom: 250px;
-	border: #ff0000 3px;
-}
- 
-div.create {
-	position:center;
-	text-align: center;
-	margin-top: auto;
-	margin-bottom: auto;
+	div.login {
+		position:center;
+		margin-top: 100px;
+		border: #ff0000 3px;
+	}
 	
-	border: #ff0000 3px;
-}
-div.logout {
-	text-align:right;
-	line-height:25px;
-}
+	div.create {
+		position:center;
+		text-align: center;
+		margin-top: auto;
+		margin-bottom: auto;
+		
+		border: #ff0000 3px;
+	}
+	div.logout {
+		text-align:right;
+		line-height:25px;
+	}
 
-div.mainPage{
-	margin: auto;
-    width: auto;
-    height: 2000px;
-}
+	div.mainPage{
+		margin: auto;
+		width: auto;
+		height: 2000px;
+	}
 
-div.createUser {
-	position:relative;
-	text-align:center;
-}
-div.mainPageImg1 img{
-	visibility: visible; 
+	div.createUser {
+		position:relative;
+		text-align:center;
+	}
+	div.mainPageImg1 img{
+		visibility: visible; 
 	/*-webkit-animation-name: bounceInLeft;
 	-webkit-animation-duration: 2s;
 	animation-name: bounceInLeft;
 	animation-duration: 2s;*/
 	float: left;
-  	padding: 0 20px 20px 0;
+	padding: 0 20px 20px 0;
 }
 
 div.mainPageImg1{
@@ -74,20 +72,20 @@ div.mainPageImg2 img{
 	animation-name: bounceInRight;
 	animation-duration: 2s;*/
 	float: right;
-  	padding: 0 20px 20px 0;
+	padding: 0 20px 20px 0;
 }
 
 div.container {
-    display: block;
-    position: relative;
-    padding-left: 35px;
-    margin-bottom: 12px;
-    cursor: pointer;
-    font-size: 22px;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
+	display: block;
+	position: relative;
+	padding-left: 35px;
+	margin-bottom: 12px;
+	cursor: pointer;
+	font-size: 22px;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
 }
 
 @-webkit-keyframes bounceInLeft{
@@ -96,8 +94,8 @@ div.container {
 }
 
 @keyframes bounceInLeft {
-    from {left: 0px;}
-    to {left: 200px;}
+	from {left: 0px;}
+	to {left: 200px;}
 }
 
 @-webkit-keyframes bounceInRight{
@@ -106,8 +104,8 @@ div.container {
 }
 
 @keyframes bounceInRight {
-    from {right: 0px;}
-    to {right: 200px;}
+	from {right: 0px;}
+	to {right: 200px;}
 }
 
 div.mainPageImg2{
@@ -161,7 +159,15 @@ img.patientImage {
 	width: 25%;
 }
 
+img.login {
+	width: 300px;
+}
+
+img.header {
+	height: 80px;
+}
+
 fieldset.fieldset-auto-width {
-         display: inline-block;
-    }
+	display: inline-block;
+}
 </style>
