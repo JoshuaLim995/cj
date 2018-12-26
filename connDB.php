@@ -1,5 +1,5 @@
 <?php
-$host = "den1.mysql4.gear.host";
+$host = "den1.mysql6.gear.host";
 
 $db_name = "goldenage";
 $username = "goldenage";
